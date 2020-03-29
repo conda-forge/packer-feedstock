@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/packer" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.5" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -13,7 +13,7 @@ source:
   # for the git sha&tag to determine its version
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: d8e89836dceefdf7be5c41f84e67528fcf6a7a79b9441a39f886bd29e379aafe
+    sha256: 244217a54eb54347ebe977607ff1a263a09702197e4462d688dc2d7bc2800131
 
 build:
   number: 0
@@ -38,11 +38,12 @@ test:
 about:
   home: https://www.packer.io
   license: MPL 2.0
-  summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently. 
+  summary: Build Automated Machine Images. 
   description: |
-    Terraform is a tool for building, changing, and versioning infrastructure safely and 
-    efficiently. Terraform can manage existing and popular service providers as well as custom in-house 
-    solutions.
+    HashiCorp Packer is easy to use and automates the creation of any type
+    of machine image. It embraces modern configuration management by
+    encouraging you to use automated scripts to install and configure the
+    software within your Packer-made images
   doc_url: https://www.terraform.io/docs/index.html
   dev_url: https://github.com/hashicorp/terraform.git
 
