@@ -3,15 +3,16 @@ About packer
 
 Home: https://www.packer.io
 
-Package license: MPL 2.0
+Package license: MPL-2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
+Summary: Build Automated Machine Images.
 
-Terraform is a tool for building, changing, and versioning infrastructure safely and
-efficiently. Terraform can manage existing and popular service providers as well as custom in-house
-solutions.
+HashiCorp Packer is easy to use and automates the creation of any type
+of machine image. It embraces modern configuration management by
+encouraging you to use automated scripts to install and configure the
+software within your Packer-made images
 
 
 Current build status
@@ -158,6 +159,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
 * [@sodre](https://github.com/sodre/)
 
