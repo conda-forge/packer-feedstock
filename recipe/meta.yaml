@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://www.packer.io
-  license: MPL 2.0
+  license: MPL-2.0
   summary: Build Automated Machine Images. 
   description: |
     HashiCorp Packer is easy to use and automates the creation of any type
