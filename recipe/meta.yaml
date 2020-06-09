@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/packer" %}
-{% set version = "1.5.5" %}
+{% set version = "1.6.0" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -13,7 +13,7 @@ source:
   # for the git sha&tag to determine its version
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 244217a54eb54347ebe977607ff1a263a09702197e4462d688dc2d7bc2800131
+    sha256: 2a135643a837ad58df16e4acc3ac01ad32b61643722a6a027929bbd6baba9435
 
 build:
   number: 0
@@ -38,7 +38,7 @@ test:
 about:
   home: https://www.packer.io
   license: MPL-2.0
-  summary: Build Automated Machine Images. 
+  summary: Build Automated Machine Images.
   description: |
     HashiCorp Packer is easy to use and automates the creation of any type
     of machine image. It embraces modern configuration management by
