@@ -3,6 +3,4 @@ channel_sources:
 channel_targets:
 - conda-forge main
 go_compiler:
-- go-cgo
-m2w64_c_compiler:
-- m2w64-toolchain
+- go-nocgo
