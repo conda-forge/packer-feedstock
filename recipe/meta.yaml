@@ -2,30 +2,23 @@
 {% set version = "1.6.0" %}
 
 {% set name = goname.split('/')[-1] %}
-{% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  # We must use git here beause the program looks
-  # for the git sha&tag to determine its version
-  - folder: {{ pkg_src }}
-    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 2a135643a837ad58df16e4acc3ac01ad32b61643722a6a027929bbd6baba9435
+  url: https://{{ goname }}/archive/v{{ version }}.tar.gz
+  sha256: 2a135643a837ad58df16e4acc3ac01ad32b61643722a6a027929bbd6baba9435
 
 build:
   number: 0
   script:
-    - pushd {{ pkg_src }}
     - go install -v .
 
 requirements:
   build:
     - {{ compiler('go') }}
-    - {{ compiler('c') }}              # [unix]
-    - {{ compiler('m2w64_c') }}        # [win]
   run_constrained:
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
 
