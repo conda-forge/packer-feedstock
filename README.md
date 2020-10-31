@@ -5,9 +5,13 @@ Home: https://www.packer.io
 
 Package license: MPL-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/packer-feedstock/blob/master/LICENSE.txt)
 
 Summary: Build Automated Machine Images.
+
+Development: https://github.com/hashicorp/terraform.git
+
+Documentation: https://www.terraform.io/docs/index.html
 
 HashiCorp Packer is easy to use and automates the creation of any type
 of machine image. It embraces modern configuration management by
