@@ -37,8 +37,8 @@ about:
     of machine image. It embraces modern configuration management by
     encouraging you to use automated scripts to install and configure the
     software within your Packer-made images
-  doc_url: https://www.terraform.io/docs/index.html
-  dev_url: https://github.com/hashicorp/terraform.git
+  doc_url: https://www.packer.io/docs
+  dev_url: https://github.com/hashicorp/packer
 
 extra:
   recipe-maintainers:
