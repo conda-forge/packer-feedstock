@@ -9,9 +9,9 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/packer-feedstoc
 
 Summary: Build Automated Machine Images.
 
-Development: https://github.com/hashicorp/terraform.git
+Development: https://github.com/hashicorp/packer
 
-Documentation: https://www.terraform.io/docs/index.html
+Documentation: https://www.packer.io/docs
 
 HashiCorp Packer is easy to use and automates the creation of any type
 of machine image. It embraces modern configuration management by
