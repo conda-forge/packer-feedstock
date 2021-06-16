@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/packer" %}
-{% set version = "1.7.2" %}
+{% set version = "1.7.3" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 913c5c572b23c7fd9f697ed09dbbdd6394591b4447ef8af89c99f2b9069fc5f4
+  sha256: f08e52321cc5a3ef6651107f8dff29f23cfc6e75f2fdfa87da33d2b5d73e0267
 
 build:
   number: 0
@@ -37,8 +37,8 @@ about:
     of machine image. It embraces modern configuration management by
     encouraging you to use automated scripts to install and configure the
     software within your Packer-made images
-  doc_url: https://www.terraform.io/docs/index.html
-  dev_url: https://github.com/hashicorp/terraform.git
+  doc_url: https://www.packer.io/docs
+  dev_url: https://github.com/hashicorp/packer
 
 extra:
   recipe-maintainers:
