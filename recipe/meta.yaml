@@ -12,9 +12,10 @@ source:
   sha256: 4f12b268f42e0b94ea66472570755288eb6c6ca8dcca20b2c64c4f1051f4841c
 
 build:
-  number: 0
+  number: 1
   script:
-    - go install -v .
+    - go build -v -ldflags "-w -s -X '{{ goname }}/version.VersionPrerelease='" -o $PREFIX/bin/packer  # [build_platform != target_platform]
+    - go install -v -ldflags "-w -s -X '{{ goname }}/version.VersionPrerelease='" .                    # [build_platform == target_platform]
 
 requirements:
   build:
