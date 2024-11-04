@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/packer-feedstoc
 
 Home: https://www.packer.io
 
-Package license: MPL-2.0
+Package license: BUSL-1.1
 
 Summary: Build Automated Machine Images.
 
@@ -23,14 +23,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/packer-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/packer-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -214,6 +207,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@dbast](https://github.com/dbast/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
 * [@sodre](https://github.com/sodre/)
