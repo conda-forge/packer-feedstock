@@ -12,10 +12,12 @@ source:
   sha256: 8e795db6e3697fb261cfbaedf4033ea0dd326a9348cddd267183cfd83672169e
 
 build:
-  number: 0
+  number: 1
   script:
     - go build -v -ldflags "-w -s -X '{{ goname }}/version.VersionPrerelease='" -o $PREFIX/bin/packer  # [build_platform != target_platform]
     - go install -v -ldflags "-w -s -X '{{ goname }}/version.VersionPrerelease='" .                    # [build_platform == target_platform]
+    # Clear out cache to avoid excessive file not removable warnings
+    - chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)                                          # [unix]
 
 requirements:
   build:
@@ -30,7 +32,7 @@ test:
 
 about:
   home: https://www.packer.io
-  license: MPL-2.0
+  license: BUSL-1.1
   summary: Build Automated Machine Images.
   description: |
     HashiCorp Packer is easy to use and automates the creation of any type
@@ -45,3 +47,4 @@ extra:
     - sodre
     - mariusvniekerk
     - dhirschfeld
+    - dbast
