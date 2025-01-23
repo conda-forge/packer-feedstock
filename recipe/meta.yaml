@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/packer" %}
-{% set version = "1.11.2" %}
+{% set version = "1.12.0" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 8e795db6e3697fb261cfbaedf4033ea0dd326a9348cddd267183cfd83672169e
+  sha256: 29555343555a5786568ea7599a98977b6185b43c3efb0f45d09d1c93d559433a
 
 build:
-  number: 1
+  number: 0
   script:
     - go build -v -ldflags "-w -s -X '{{ goname }}/version.VersionPrerelease='" -o $PREFIX/bin/packer  # [build_platform != target_platform]
     - go install -v -ldflags "-w -s -X '{{ goname }}/version.VersionPrerelease='" .                    # [build_platform == target_platform]
