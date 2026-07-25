@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/packer" %}
-{% set version = "1.15.4" %}
+{% set version = "1.16.0" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 9423ab33d04e35d60087e61755398fb80aa30aa67dabd39febbfa81df6faf17f
+  sha256: 9527aa4ba6a621b67c767803e5ba12b560263ae11b5e25d3db4623a7ec70d6d4
 
 build:
   number: 0
