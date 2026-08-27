@@ -23,11 +23,13 @@ build:
       then:
         - if not exist "%LIBRARY_BIN%" mkdir "%LIBRARY_BIN%"
         - go build -v -ldflags "-w -s -X github.com/hashicorp/packer/version.VersionPrerelease=" -o "%LIBRARY_BIN%\packer.exe"
+    - go-licenses save . --save_path ./library_licenses || true
 
 requirements:
   build:
     - ${{ stdlib('c') }}
     - ${{ compiler('go') }}
+    - go-licenses
 
 tests:
   - package_contents:
@@ -41,7 +43,9 @@ about:
   documentation: https://www.packer.io/docs
   repository: https://github.com/hashicorp/packer
   license: BUSL-1.1
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - library_licenses/
   summary: Build Automated Machine Images.
   description: >-
     HashiCorp Packer is easy to use and automates the creation of any type
