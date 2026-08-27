@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  name: packer
+  version: 1.16.0
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/hashicorp/${{ name }}/archive/v${{ version }}.tar.gz
+  sha256: 9527aa4ba6a621b67c767803e5ba12b560263ae11b5e25d3db4623a7ec70d6d4
+
+build:
+  number: 1
+  script:
+    - if: unix
+      then:
+        - mkdir -p "$PREFIX/bin"
+        - go build -v -ldflags "-w -s -X github.com/hashicorp/packer/version.VersionPrerelease=" -o "$PREFIX/bin/packer"
+    - if: win
+      then:
+        - if not exist "%LIBRARY_BIN%" mkdir "%LIBRARY_BIN%"
+        - go build -v -ldflags "-w -s -X github.com/hashicorp/packer/version.VersionPrerelease=" -o "%LIBRARY_BIN%\packer.exe"
+    - go-licenses save . --save_path ./library_licenses || true
+
+requirements:
+  build:
+    - ${{ stdlib('c') }}
+    - ${{ compiler('go') }}
+    - go-licenses
+
+tests:
+  - package_contents:
+      bin:
+        - packer
+  - script:
+      - packer -v
+
+about:
+  homepage: https://www.packer.io
+  documentation: https://www.packer.io/docs
+  repository: https://github.com/hashicorp/packer
+  license: BUSL-1.1
+  license_file:
+    - LICENSE
+    - library_licenses/
+  summary: Build Automated Machine Images.
+  description: >-
+    HashiCorp Packer is easy to use and automates the creation of any type
+    of machine image. It embraces modern configuration management by
+    encouraging you to use automated scripts to install and configure the
+    software within your Packer-made images.
+
+extra:
+  recipe-maintainers:
+    - sodre
+    - mariusvniekerk
+    - dhirschfeld
+    - dbast
