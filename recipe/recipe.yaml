@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: packer
-  version: "1.16.1"
+  version: "1.16.2"
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/hashicorp/${{ name }}/archive/v${{ version }}.tar.gz
-  sha256: 4256f078ac9f5c6b154b2b56ced4be77ef8326387002d30596dd7ac39960142c
+  sha256: de0fb9c389dee6acc24d07ae2af02a3f6c30710cba474646325371cf0d62bc78
 
 build:
   number: 0
